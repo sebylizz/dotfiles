@@ -120,5 +120,25 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+case ":$PATH:" in
+    *:/home/seby/.juliaup/bin:*)
+        ;;
+
+    *)
+        export PATH=/home/seby/.juliaup/bin${PATH:+:${PATH}}
+        ;;
+esac
+
+# <<< juliaup initialize <<<
+
+export PS1='${PWD/*\//} > '
+
+eval "$(thefuck --alias)"
+
+alias coding="cd /mnt/c/Users/Sebastian/OneDrive\ -\ Aalborg\ Universitet/Skrivebord/coding/"
+alias vim="nvim"
 alias linuxserver="ssh seby@kjaeldgaard.com"
-alias dotfiles=/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME
