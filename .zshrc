@@ -14,9 +14,14 @@ set keymap vi
 
 alias linuxserver="ssh seby@kjaeldgaard.com"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias vim=nvim
+alias vim='nvim'
 alias coding="cd /mnt/c/Users/Sebastian/OneDrive\ -\ Aalborg\ Universitet/Skrivebord/coding/"
 alias la='ls -A'
+
+go() { 
+  cd ~/Desktop/coding/"$1" && 
+  tmux new-session -s "$1" \; send-keys 'nvim' Enter
+}
 
 export PS1='%1d > '
 unsetopt BEEP
