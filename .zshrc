@@ -23,9 +23,14 @@ fi
 alias coding='cd $CODE' 
 
 go() { 
-  cd $CODE$1 && 
-  tmux new-session -s "$1" \; send-keys 'nvim' Enter
+    cd $CODE$1 || return
+    if tmux has-session -t "$1" 2>/dev/null; then
+        tmux attach-session -t "$1"
+    else
+        tmux new-session -s "$1" \; send-keys 'nvim' Enter
+    fi
 }
+
 
 export PS1='%1d > '
 unsetopt BEEP
