@@ -14,6 +14,7 @@ alias linuxserver="ssh seby@kjaeldgaard.com"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim='nvim'
 alias la='ls -A'
+alias tk='tmux kill-session'
 
 if [[ $(uname) == "Linux" ]]; then
     CODE="/mnt/c/Users/Sebastian/OneDrive - Aalborg Universitet/Skrivebord/coding/"
@@ -23,11 +24,10 @@ fi
 alias coding='cd $CODE' 
 
 go() { 
-    cd $CODE$1 || return
     if tmux has-session -t "$1" 2>/dev/null; then
         tmux attach-session -t "$1"
     else
-        tmux new-session -s "$1" \; send-keys 'nvim' Enter
+        tmux new-session -c $CODE/$1 -s "$1" \; send-keys 'nvim' Enter
     fi
 }
 
