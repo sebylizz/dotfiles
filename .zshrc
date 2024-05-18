@@ -4,6 +4,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="/snap/bin:$PATH"
 export PATH="$PATH:/Users/sebastianandersen/.local/bin"
+export PATH="$PATH:/home/seby/.local/bin"
 export EDITOR=vim
 export VISUAL="$EDITOR"
 
