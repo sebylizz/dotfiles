@@ -16,7 +16,9 @@ return {
 			-- to learn the available actions
 			lsp_zero.default_keymaps({buffer = bufnr})
 		end)
+
 		require('mason').setup({})
+
 		require('mason-lspconfig').setup({
 			-- Replace the language servers listed here 
 			-- with the ones you want to install
@@ -25,14 +27,38 @@ return {
 				function(server_name)
 					require('lspconfig')[server_name].setup({})
 				end,
-
-                lua_ls = function()
-                    require('lspconfig')['lua_ls'].setup({settings = { Lua = { diagnostics = { globals = {'vim'} } } } })
-                end
-			},
+				lua_ls = function()
+					require('lspconfig')['lua_ls'].setup({
+						settings = {
+							Lua = {
+								diagnostics = {
+									globals = {'vim'}
+								}
+							}
+						}
+					})
+				end,
+				tsserver = function()
+					require('lspconfig').tsserver.setup({
+						handlers = {
+							["textDocument/publishDiagnostics"] = function(_, _, params, client_id, _, config)
+								if params.diagnostics ~= nil then
+									local idx = 1
+									while idx <= #params.diagnostics do
+										if params.diagnostics[idx].code == 80001 then
+											table.remove(params.diagnostics, idx)
+										else
+											idx = idx + 1
+										end
+									end
+								end
+								vim.lsp.diagnostic.on_publish_diagnostics(_, _, params, client_id, _, config)
+							end,
+						},
+					})
+				end,
+			}
 		})
 	end
-
-
-	-- here you can setup the language servers }
 }
+

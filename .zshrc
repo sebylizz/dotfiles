@@ -28,10 +28,13 @@ go() {
     if tmux has-session -t "$1" 2>/dev/null; then
         tmux attach-session -t "$1"
     else
-        tmux new-session -c $CODE/$1 -s "$1" \; send-keys 'nvim .' Enter
+        tmux new-session -c $CODE/$1 -s "$1" \; send-keys 'nvim' Enter
     fi
 }
 
 
 export PS1='%1d > '
 unsetopt BEEP
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
