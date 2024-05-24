@@ -17,5 +17,5 @@ vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
 
-vim.cmd("language en_US")
+vim.cmd("language en_US.utf8")
 

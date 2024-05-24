@@ -1,9 +1,9 @@
 return {
-	{ "diegoulloao/neofusion.nvim", name = "neofusion", config = true, opts = { transparent_mode = true }},
+	{ "EdenEast/nightfox.nvim", name = "nightfox", config = true, opts = {}},
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "neofusion",
+			colorscheme = "nightfox",
 		}
 	}
 }
