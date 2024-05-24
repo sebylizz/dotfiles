@@ -14,5 +14,6 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
+vim.cmd('highlight clear statusline')
 
 vim.opt.scrolloff = 8
