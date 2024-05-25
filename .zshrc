@@ -14,8 +14,10 @@ set keymap vi
 alias linuxserver="ssh seby@kjaeldgaard.com"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim='nvim'
+alias v='nvim'
 alias la='ls -A'
 alias tk='tmux kill-session'
+alias lg='lazygit'
 
 if [[ $(uname) == "Linux" ]]; then
     CODE="/mnt/c/Users/Sebastian/OneDrive - Aalborg Universitet/Skrivebord/coding/"
@@ -32,9 +34,7 @@ go() {
     fi
 }
 
-
 export PS1='%1d > '
 unsetopt BEEP
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-

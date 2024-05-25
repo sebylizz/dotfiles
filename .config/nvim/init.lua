@@ -1,6 +1,5 @@
 require("seby")
 if vim.fn.has("wsl") == 1 then
-    print("nig")
     vim.g.clipboard = {
         name = 'WslClipboard',
         copy = {
