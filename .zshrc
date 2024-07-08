@@ -39,3 +39,12 @@ export PS1='%1d > '
 unsetopt BEEP
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/seby/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<
