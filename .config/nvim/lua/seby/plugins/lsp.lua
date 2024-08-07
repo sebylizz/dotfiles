@@ -6,7 +6,8 @@ return {
         'neovim/nvim-lspconfig',
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/nvim-cmp',
-        'L3MON4D3/LuaSnip'
+        'L3MON4D3/LuaSnip',
+        'nvim-java/nvim-java'
     },
     config = function()
         local lsp_zero = require('lsp-zero')
@@ -18,6 +19,8 @@ return {
         end)
 
         require('mason').setup({})
+
+        require('java').setup()
 
         require('mason-lspconfig').setup({
             -- Replace the language servers listed here 
@@ -59,6 +62,7 @@ return {
                 end,
             }
         })
+
     end
 }
 

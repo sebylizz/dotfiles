@@ -27,6 +27,7 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-nvim-lsp-signature-help",
+      "lukas-reineke/cmp-rg",
     },
 
     config = function()
@@ -66,6 +67,7 @@ return {
           { name = "path" },
           { name = "buffer" },
           { name = "nvim-lsp-signature-help" },
+          { name = "rg" },
         },
       })
     end,
