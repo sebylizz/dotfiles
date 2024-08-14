@@ -48,3 +48,10 @@ path=('/home/seby/.juliaup/bin' $path)
 export PATH
 
 # <<< juliaup initialize <<<
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+source ~/.profile
+alias mvngo="mvn clean package && mvn exec:java"
