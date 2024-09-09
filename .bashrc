@@ -142,3 +142,8 @@ eval "$(thefuck --alias)"
 alias coding="cd /mnt/c/Users/Sebastian/OneDrive\ -\ Aalborg\ Universitet/Skrivebord/coding/"
 alias vim="nvim"
 alias linuxserver="ssh seby@kjaeldgaard.com"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+. "$HOME/.cargo/env"
