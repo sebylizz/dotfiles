@@ -7,7 +7,7 @@ return {
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/nvim-cmp',
         'L3MON4D3/LuaSnip',
-        'nvim-java/nvim-java'
+        'mfussenegger/nvim-jdtls'
     },
     config = function()
         local lsp_zero = require('lsp-zero')
@@ -20,12 +20,10 @@ return {
 
         require('mason').setup({})
 
-        require('java').setup()
-
         require('mason-lspconfig').setup({
             -- Replace the language servers listed here 
             -- with the ones you want to install
-            ensure_installed = {'jdtls', 'tsserver', 'lua_ls', 'html', 'cssls', 'clangd', 'bashls'},
+            ensure_installed = {'jdtls', 'ts_ls', 'lua_ls', 'html', 'cssls', 'clangd', 'bashls'},
             handlers = {
                 function(server_name)
                     require('lspconfig')[server_name].setup({})
@@ -41,8 +39,8 @@ return {
                         }
                     })
                 end,
-                tsserver = function()
-                    require('lspconfig')['tsserver'].setup({
+                ts_ls = function()
+                    require('lspconfig')['ts_ls'].setup({
                         handlers = {
                             ["textDocument/publishDiagnostics"] = function(_, result, ctx, config)
                                 if result and result.diagnostics then

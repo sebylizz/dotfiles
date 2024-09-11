@@ -68,6 +68,7 @@ return {
           { name = "buffer" },
           { name = "nvim-lsp-signature-help" },
           { name = "rg" },
+          { name = "copilot" },
         },
       })
     end,
