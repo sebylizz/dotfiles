@@ -23,10 +23,12 @@ return {
         require('mason-lspconfig').setup({
             -- Replace the language servers listed here 
             -- with the ones you want to install
-            ensure_installed = {'jdtls', 'ts_ls', 'lua_ls', 'html', 'cssls', 'clangd', 'bashls'},
+            ensure_installed = {'jdtls', 'ts_ls', 'lua_ls', 'html', 'cssls', 'clangd', 'bashls', 'lemminx'},
             handlers = {
                 function(server_name)
                     require('lspconfig')[server_name].setup({})
+                end,
+                jdtls = function()
                 end,
                 lua_ls = function()
                     require('lspconfig')['lua_ls'].setup({

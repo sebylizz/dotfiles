@@ -1,17 +1,7 @@
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+setopt hist_ignore_dups  # Avoid duplicate entries in command history
+setopt inc_append_history  # Append to history, don't overwrite it
 
-export PATH="/snap/bin:$PATH"
-export PATH="$PATH:/Users/sebastianandersen/.local/bin"
-export PATH="$PATH:/home/seby/.local/bin"
-export EDITOR=vim
-export VISUAL="$EDITOR"
-export LANG="en_US.UTF-8"
-
-set editing-mode vi
-set keymap vi
-
+alias tmux='tmux -2'  # Ensure tmux starts with 256-color support
 alias linuxserver="ssh seby@kjaeldgaard.com"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim='nvim'
@@ -20,38 +10,31 @@ alias la='ls -A'
 alias tk='tmux kill-session'
 alias lg='lazygit'
 
-if [[ $(uname) == "Linux" ]]; then
-    CODE="/mnt/c/Users/Sebastian/OneDrive - Aalborg Universitet/Skrivebord/coding/"
-else
-    CODE=~/Desktop/coding/
-fi
-alias coding='cd $CODE' 
+PROMPT='%1d > '  # Simple prompt showing user@host:path
 
-go() { 
-    if tmux has-session -t "$1" 2>/dev/null; then
-        tmux attach-session -t "$1"
-    else
-        tmux new-session -c $CODE/$1 -s "$1" \; send-keys 'nvim' Enter
-    fi
+export EDITOR='nvim'
+export VISUAL='nvim'
+set -o vi
+
+export NVM_DIR=~/.nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# Lazy-load sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+load_sdkman() {
+  [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 }
 
-export PS1='%1d > '
-unsetopt BEEP
+sdk() { load_sdkman; sdk "$@"; }
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
+export M2_HOME="$HOME/.sdkman/candidates/maven/current"
+export PATH="/snap/bin:~/.local/bin:$JAVA_HOME/bin:$M2_HOME/bin:$HOME/.juliaup/bin:$PATH"
 
-# >>> juliaup initialize >>>
+export TERM=xterm-256color
 
-# !! Contents within this block are managed by juliaup !!
-
-path=('/home/seby/.juliaup/bin' $path)
-export PATH
-
-# <<< juliaup initialize <<<
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-source ~/.profile
-alias mvngo="mvn clean package && mvn exec:java"
+if command -v tmux >/dev/null; then
+  if [ -z "$TMUX" ]; then
+    tmux
+  fi
+fi
