@@ -10,7 +10,7 @@ alias la='ls -A'
 alias tk='tmux kill-session'
 alias lg='lazygit'
 
-PROMPT='%1d > '  # Simple prompt showing user@host:path
+PROMPT='%1d > '
 
 export EDITOR='nvim'
 export VISUAL='nvim'
@@ -33,8 +33,4 @@ export PATH="/snap/bin:~/.local/bin:$JAVA_HOME/bin:$M2_HOME/bin:$HOME/.juliaup/b
 
 export TERM=xterm-256color
 
-if command -v tmux >/dev/null; then
-  if [ -z "$TMUX" ]; then
-    tmux
-  fi
-fi
+source ~/.profile
