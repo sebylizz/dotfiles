@@ -19,3 +19,4 @@ vim.opt.scrolloff = 8
 
 vim.cmd("language en_US.UTF-8")
 
+vim.opt.mouse = "a"
