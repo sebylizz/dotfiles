@@ -1,7 +1,7 @@
-setopt hist_ignore_dups  # Avoid duplicate entries in command history
-setopt inc_append_history  # Append to history, don't overwrite it
+setopt hist_ignore_dups
+setopt inc_append_history
 
-alias tmux='tmux -2'  # Ensure tmux starts with 256-color support
+alias tmux='tmux -2'
 alias linuxserver="ssh seby@kjaeldgaard.com"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim='nvim'
@@ -14,12 +14,10 @@ PROMPT='%1d > '
 
 export EDITOR='nvim'
 export VISUAL='nvim'
-set -o vi
 
 export NVM_DIR=~/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-# Lazy-load sdkman
 export SDKMAN_DIR="$HOME/.sdkman"
 load_sdkman() {
   [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
