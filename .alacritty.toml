@@ -1,0 +1,28 @@
+[font]
+normal.family = "0xProto Nerd Font Mono"
+bold.family = "0xProto Nerd Font Mono, Bold"
+italic.family = "0xProto Nerd Font Mono, Regular Italic"
+bold_italic.family = "Nimbus Sans, Bold Italic"
+size = 9
+
+[window]
+dimensions = { columns = 220, lines = 70 }
+decorations = "Transparent"
+opacity = 0.99
+blur = true
+
+[scrolling]
+history = 100000
+multiplier = 5
+
+[colors]
+transparent_background_colors = true
+
+[keyboard]
+bindings = [
+{ key = "7", mods = "Control|Alt", chars = "{" },
+{ key = "8", mods = "Control|Alt", chars = "[" },
+{ key = "9", mods = "Control|Alt", chars = "]" },
+{ key = "0", mods = "Control|Alt", chars = "}" },
+{ key = "2", mods = "Control|Alt", chars = "@" }
+]
