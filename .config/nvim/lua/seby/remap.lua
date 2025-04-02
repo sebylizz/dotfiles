@@ -23,3 +23,6 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("v", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("v", "<C-u>", "<C-u>zz")
+
+vim.keymap.set("n", "<M-o>", ":bprevious<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<M-i>", ":bnext<CR>", { noremap = true, silent = true })
