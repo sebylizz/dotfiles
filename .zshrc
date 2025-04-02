@@ -10,7 +10,7 @@ alias la='ls -A'
 alias tk='tmux kill-session'
 alias lg='lazygit'
 
-PROMPT='%1d > '
+PROMPT='%F{blue}%1d >%f '
 
 export EDITOR='nvim'
 export VISUAL='nvim'
