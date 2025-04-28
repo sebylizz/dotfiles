@@ -56,7 +56,7 @@ local function set_global_keymaps(client, bufnr)
     set_keymap({
         key = '<leader>D',
         cmd = ":Telescope diagnostics bufnr=0<CR>",
-        desc = "Show diagnostics for current buffer",
+        desc = "Sow diagnostics for current buffer",
         bufnr = bufnr,
     })
 
