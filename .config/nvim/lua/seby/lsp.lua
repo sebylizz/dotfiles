@@ -1,4 +1,4 @@
-function set_keymap(opts)
+local function set_keymap(opts)
     local mode = opts.mode or "n"
     local bufnr = opts.bufnr or 0
     local expr = opts.expr or false
