@@ -1,8 +1,8 @@
 [font]
-normal.family = "0xProto Nerd Font Mono"
-bold.family = "0xProto Nerd Font Mono, Bold"
-italic.family = "0xProto Nerd Font Mono, Regular Italic"
-bold_italic.family = "Nimbus Sans, Bold Italic"
+normal.family = "Hack Nerd Font Mono"
+bold.family = "Hack Nerd Font Mono"
+italic.family = "Hack Nerd Font Mono"
+bold_italic.family = "Hack Nerd Font Mono"
 size = 9
 
 [window]
