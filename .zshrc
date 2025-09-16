@@ -34,8 +34,15 @@ sdk() { load_sdkman; sdk "$@"; }
 
 export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
 export M2_HOME="$HOME/.sdkman/candidates/maven/current"
-export PATH="/snap/bin:$HOME/.local/bin:$JAVA_HOME/bin:$M2_HOME/bin:$PATH"
+export PATH="/opt/arm-toolchain/bin:$HOME/.local/bin:$JAVA_HOME/bin:$M2_HOME/bin:$PATH"
 
 export TERM=xterm-256color
 
 source ~/.profile
+
+# bun completions
+[ -s "/Users/sebastianandersen/.bun/_bun" ] && source "/Users/sebastianandersen/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

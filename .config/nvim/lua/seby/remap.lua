@@ -26,3 +26,19 @@ vim.keymap.set("v", "<C-u>", "<C-u>zz")
 
 vim.keymap.set("n", "<M-o>", ":bprevious<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<M-i>", ":bnext<CR>", { noremap = true, silent = true })
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(ev)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
+    vim.keymap.set('n', 'gr', Snacks.picker.lsp_references)
+    vim.keymap.set('n', 'gt', Snacks.picker.lsp_type_definitions)
+    vim.keymap.set('n', '<leader>ss', Snacks.picker.lsp_symbols)
+    vim.keymap.set('n', '<leader>sS', Snacks.picker.lsp_workspace_symbols)
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
+    vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename)
+  end
+})
+
+vim.keymap.set('n', '<leader>ff', function() Snacks.picker.files() end)
+vim.keymap.set('n', '<leader>lg', function() Snacks.picker.grep() end)

@@ -25,6 +25,7 @@ vim.opt.cursorlineopt = "both"
 
 vim.opt.clipboard = "unnamedplus"
 
+
 vim.api.nvim_set_hl(0, "yankhl", { bg = "#666666" })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
