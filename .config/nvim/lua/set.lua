@@ -1,3 +1,5 @@
+vim.g.ai_cmp = false
+
 vim.opt.nu = true
 
 vim.opt.tabstop = 4
@@ -29,6 +31,6 @@ vim.api.nvim_set_hl(0, "yankhl", { bg = "#666666" })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
     callback = function()
-       vim.hl.on_yank({higroup="yankhl", timeout=50})
+        vim.hl.on_yank({ higroup = "yankhl", timeout = 75 })
     end,
 })
