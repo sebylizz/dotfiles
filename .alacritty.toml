@@ -3,11 +3,11 @@ normal.family = "Hack Nerd Font Mono"
 bold.family = "Hack Nerd Font Mono"
 italic.family = "Hack Nerd Font Mono"
 bold_italic.family = "Hack Nerd Font Mono"
-size = 9
+size = 11
 
 [window]
 dimensions = { columns = 220, lines = 70 }
-decorations = "Transparent"
+#decorations = "Transparent"
 opacity = 0.99
 blur = true
 
