@@ -19,6 +19,10 @@ input * {
 
 exec mako
 
+client.focused   #4a4a4a #2e2e2e #e0e0e0 #666666 #2e2e2e
+client.unfocused #2e2e2e #1e1e1e #a0a0a0 #444444 #1e1e1e
+client.urgent    #ff5555 #550000 #ffffff #ff5555 #550000
+
 for_window [app_id="pwvucontrol"] floating enable, resize set 800 600, move position 1700 35
 for_window [app_id="pavucontrol"] floating enable
 
