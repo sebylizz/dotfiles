@@ -1,0 +1,50 @@
+{
+    "position": "top",
+    "height": 30,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "network", "battery", "disk", "memory", "cpu"],
+    
+    "sway/workspaces": {
+        "disable-scroll": true
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰖁 Muted",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pkill pwvucontrol || pwvucontrol",
+        "on-click-right": "pkill pavucontrol || pavucontrol",
+        "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    "network": {
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": " {ipaddr}",
+        "format-disconnected": "⚠ Disconnected",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "states": {
+            "warning": 30,
+            "critical": 15
+        }
+    },
+    "disk": {
+        "format": " {free}",
+        "path": "/"
+    },
+    "memory": {
+        "format": " {}%"
+    },
+    "cpu": {
+        "format": " {usage}%"
+    },
+    "clock": {
+        "format": "{:%Y-%m-%d %H:%M:%S}",
+        "interval": 1
+    }
+}

@@ -1,0 +1,127 @@
+# === CORE SYSTEM ===
+base
+base-devel
+linux
+linux-firmware
+linux-headers
+grub
+efibootmgr
+os-prober
+
+# === ESSENTIAL SYSTEM TOOLS ===
+man-db
+man-pages
+git
+stow
+wget
+curl
+zip
+unrar
+ntfs-3g
+dosfstools
+dialog
+cronie
+
+# === NETWORK ===
+networkmanager
+bluez-utils
+iw
+wpa_supplicant
+bind
+ethtool
+openbsd-netcat
+
+# === SWAY & WAYLAND ===
+sway
+swaybg
+waybar
+mako
+ly
+xorg-xwayland
+xdg-desktop-portal-wlr
+wayland
+wayland-protocols
+qt6-wayland
+
+# === TERMINAL & SHELL ===
+alacritty
+zsh
+tmux
+screen
+vim
+
+# === LAUNCHER ===
+fuzzel
+
+# === FILE MANAGEMENT ===
+thunar
+tumbler
+gvfs
+gvfs-afc
+gvfs-mtp
+
+# === AUDIO/VIDEO ===
+pipewire-alsa
+pipewire-pulse
+pavucontrol
+mpv
+sof-firmware
+
+# === GRAPHICS ===
+mesa-utils
+clinfo
+
+# === IMAGE VIEWING/EDITING ===
+imv
+gimp
+chafa
+ffmpegthumbnailer
+
+# === FONTS ===
+ttf-jetbrains-mono-nerd
+ttf-firacode-nerd
+ttf-nerd-fonts-symbols
+ttf-nerd-fonts-symbols-mono
+terminus-font
+
+# === WEB APPLICATIONS ===
+firefox
+
+# === TERMINAL UTILITIES ===
+fd
+fzf
+ripgrep
+tree
+jq
+fastfetch
+
+# === C DEVELOPMENT ===
+cmake
+gdb
+bear
+cloc
+lldb
+valgrind
+
+# === RUST DEVELOPMENT ===
+rust-src
+rustup
+
+# === PYTHON DEVELOPMENT ===
+python-pip
+python-pipx
+pyenv
+
+# === BUILD TOOLS ===
+ccache
+
+# === UTILITIES ===
+wl-clipboard
+gperf
+fontconfig
+
+# === AUR PACKAGES ===
+# yay
+# neovim-nightly
+# git-completion
+# pwvucontrol

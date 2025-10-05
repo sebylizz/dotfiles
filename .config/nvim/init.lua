@@ -25,6 +25,7 @@ vim.opt.scrolloff = 8
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "both"
 vim.opt.clipboard = "unnamedplus"
+vim.opt.hlsearch = false
 vim.cmd("language en_US.UTF-8")
 
 require("nightfox").setup {

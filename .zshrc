@@ -7,7 +7,7 @@ alias vim='nvim'
 alias v='nvim'
 alias la='ls -A'
 alias tk='tmux kill-session'
-alias lg='lazygit'
+alias ..="cd .."
 
 PROMPT='%F{blue}%1d >%f '
 
