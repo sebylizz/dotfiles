@@ -1,6 +1,6 @@
 {
     "position": "top",
-    "height": 30,
+    "height": 20,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
     "modules-right": ["pulseaudio", "network", "battery", "disk", "memory", "cpu"],
