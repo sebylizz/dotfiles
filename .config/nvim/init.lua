@@ -11,6 +11,8 @@ vim.pack.add({
     { src = "https://github.com/akinsho/toggleterm.nvim" },
     { src = "https://github.com/chomosuke/typst-preview.nvim" },
     { src = "https://github.com/EdenEast/nightfox.nvim" },
+    { src = "https://github.com/mfussenegger/nvim-jdtls" },
+    { src = "https://github.com/christoomey/vim-tmux-navigator" },
 })
 
 vim.g.mapleader = " "
@@ -22,6 +24,7 @@ vim.opt.expandtab = true
 vim.opt.wrap = false
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
+vim.opt.hlsearch = false
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "both"
 vim.opt.clipboard = "unnamedplus"
@@ -41,7 +44,7 @@ vim.cmd.colorscheme("duskfox")
 local builtin = require("telescope.builtin")
 
 require("blink.cmp").setup()
-require('nvim-treesitter.configs').setup { sync_install = false, auto_install = true, ensure_installed = { "lua", "svelte", "typescript", "rust", "html", "css", "javascript", "json", "markdown", "yaml" }, highlight = { enable = true, }, indent = { enable = true, }, }
+require('nvim-treesitter.configs').setup { sync_install = false, auto_install = true, highlight = { enable = true, }, indent = { enable = true, }, }
 require("tree-sitter-surrealdb").setup()
 
 require("toggleterm").setup {
@@ -53,7 +56,7 @@ require("toggleterm").setup {
     }
 }
 
-vim.lsp.enable({ "rust_analyzer", "lua_ls", "zls" })
+vim.lsp.enable({ "jdtls", "clangd", "pyright", "rust_analyzer", "lua_ls", "zls" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)

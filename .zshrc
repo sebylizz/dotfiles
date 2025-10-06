@@ -13,6 +13,7 @@ PROMPT='%F{blue}%1d >%f '
 
 export EDITOR='nvim'
 export VISUAL='nvim'
+export LANG=en_US.UTF-8
 
 export NVM_DIR=~/.nvm
 export NVM_DIR="$HOME/.nvm"
