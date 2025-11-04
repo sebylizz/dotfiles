@@ -4,7 +4,6 @@ vim.pack.add({
     { src = "https://github.com/dariuscorvus/tree-sitter-surrealdb.nvim" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/saghen/blink.cmp" },
-    { src = "https://github.com/zbirenbaum/copilot.lua" },
     { src = "https://github.com/nvim-telescope/telescope.nvim" },
     { src = "https://github.com/nvim-tree/nvim-web-devicons" },
     { src = "https://github.com/nvim-lualine/lualine.nvim" },
@@ -56,7 +55,7 @@ require("toggleterm").setup {
     }
 }
 
-vim.lsp.enable({ "jdtls", "clangd", "pyright", "rust_analyzer", "lua_ls", "zls" })
+vim.lsp.enable({ "jdtls", "ccls", "pyright", "rust_analyzer", "lua_ls", "zls" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)

@@ -1,18 +1,18 @@
-[font]
-normal.family = "Hack Nerd Font Mono"
-bold.family = "Hack Nerd Font Mono"
-italic.family = "Hack Nerd Font Mono"
-bold_italic.family = "Hack Nerd Font Mono"
-size = 9
-
-[window]
-dimensions = { columns = 220, lines = 70 }
-opacity = 0.99
-blur = true
-
-[scrolling]
-history = 100000
-multiplier = 5
-
-[colors]
-transparent_background_colors = true
+# [font]
+# normal.family = "Hack Nerd Font Mono"
+# bold.family = "Hack Nerd Font Mono"
+# italic.family = "Hack Nerd Font Mono"
+# bold_italic.family = "Hack Nerd Font Mono"
+# size = 11
+#
+# [window]
+# dimensions = { columns = 220, lines = 70 }
+# opacity = 0.99
+# blur = true
+#
+# [scrolling]
+# history = 100000
+# multiplier = 5
+#
+# [colors]
+# transparent_background_colors = true
