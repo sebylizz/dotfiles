@@ -55,7 +55,18 @@ require("toggleterm").setup {
     }
 }
 
-vim.lsp.enable({ "jdtls", "ccls", "pyright", "rust_analyzer", "lua_ls", "zls" })
+vim.lsp.enable({ "jdtls", "clangd", "ruff", "rust_analyzer", "lua_ls", "zls" })
+
+require("lspconfig").basedpyright.setup({
+    settings = {
+        basedpyright = {
+            analysis = {
+                typeCheckingMode = "off",
+                disableOrganizeImports = true,
+            }
+        },
+    },
+})
 
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)
