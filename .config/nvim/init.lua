@@ -55,9 +55,9 @@ require("toggleterm").setup {
     }
 }
 
-vim.lsp.enable({ "jdtls", "clangd", "ruff", "rust_analyzer", "lua_ls", "zls" })
+vim.lsp.enable({ "jdtls", "ccls", "ruff", "basedpyright", "rust_analyzer", "lua_ls", "zls" })
 
-require("lspconfig").basedpyright.setup({
+vim.lsp.config("basedpyright", {
     settings = {
         basedpyright = {
             analysis = {
