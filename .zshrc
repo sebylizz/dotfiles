@@ -6,8 +6,6 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 setopt INC_APPEND_HISTORY
-setopt SHARE_HISTORY
-setopt EXTENDED_HISTORY
 
 alias tmux='tmux -2'
 alias vim='nvim'
@@ -16,6 +14,7 @@ alias ls='ls --color --group-directories-first'
 alias la='ls -A'
 alias tk='tmux kill-session'
 alias ..="cd .."
+alias lav="make"
 
 PROMPT="%F{blue}%1d >%f "
 
@@ -40,6 +39,8 @@ export PATH="/usr/lib/rustup/bin:/snap/bin:$HOME/.local/bin:$JAVA_HOME/bin:$M2_H
 export TERM=xterm-256color
 source <(fzf --zsh)
 
+source ~/.profile
+
 # Git autocomplete
 autoload -Uz compinit && compinit
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
@@ -50,5 +51,39 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
+
+binary() {
+    local n=${1#-}
+    local sign=''
+    [[ $1 -lt 0 ]] && sign='-'
+    
+    local bits=""
+    local i=0
+
+    if (( n == 0 )); then
+        printf "0\n"
+        return
+    fi
+
+    while (( n > 0 )); do
+        if (( i > 0 && i % 4 == 0 )); then
+            bits=" $bits"
+        fi
+
+        bits="$(( n & 1 ))$bits"
+        n=$(( n >> 1 ))
+        (( i++ ))
+    done
+
+    printf "%s\n" "$sign $bits"
+}
+
+hex(){
+    printf "0x%x\n" $1
+}
+
+dec(){
+    printf "%d\n" $1
+}
 
 source $HOME/.profile

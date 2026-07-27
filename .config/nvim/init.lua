@@ -1,3 +1,5 @@
+local vim = vim;
+
 vim.pack.add({
     { src = "https://github.com/nvim-lua/plenary.nvim" },
     { src = "https://github.com/romus204/tree-sitter-manager.nvim" },
@@ -32,7 +34,7 @@ vim.cmd("language en_US.UTF-8")
 require("nightfox").setup {
     palettes = {
         duskfox = {
-            bg1 = "#111111",
+            bg1 = "#000000",
             bg3 = "#222222",
         }
     }
@@ -67,6 +69,14 @@ vim.lsp.config("basedpyright", {
             }
         },
     },
+})
+
+vim.lsp.config("ccls", {
+    init_options = {
+        cache = {
+            directory = '/tmp/ccls-cache',
+        }
+    }
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -120,3 +130,4 @@ vim.keymap.set("n", "<M-i>", ":bnext<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>ff", function() builtin.find_files() end)
 vim.keymap.set("n", "<leader>lg", function() builtin.live_grep() end)
 vim.keymap.set("n", "<leader>sd", function() builtin.diagnostics() end)
+vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float)
