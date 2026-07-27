@@ -1,7 +1,6 @@
 vim.pack.add({
     { src = "https://github.com/nvim-lua/plenary.nvim" },
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-    { src = "https://github.com/dariuscorvus/tree-sitter-surrealdb.nvim" },
+    { src = "https://github.com/romus204/tree-sitter-manager.nvim" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/saghen/blink.cmp" },
     { src = "https://github.com/nvim-telescope/telescope.nvim" },
@@ -42,9 +41,11 @@ vim.cmd.colorscheme("duskfox")
 
 local builtin = require("telescope.builtin")
 
+require("tree-sitter-manager").setup({
+  auto_install = true,
+})
+
 require("blink.cmp").setup()
-require('nvim-treesitter.configs').setup { sync_install = false, auto_install = true, highlight = { enable = true, }, indent = { enable = true, }, }
-require("tree-sitter-surrealdb").setup()
 
 require("toggleterm").setup {
     autochdir = true,
@@ -55,7 +56,7 @@ require("toggleterm").setup {
     }
 }
 
-vim.lsp.enable({ "jdtls", "ccls", "ruff", "basedpyright", "rust_analyzer", "lua_ls", "zls" })
+vim.lsp.enable({ "ts_ls", "jdtls", "clangd", "ruff", "basedpyright", "rust_analyzer", "lua_ls", "zls" })
 
 vim.lsp.config("basedpyright", {
     settings = {

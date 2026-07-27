@@ -10,7 +10,6 @@ setopt SHARE_HISTORY
 setopt EXTENDED_HISTORY
 
 alias tmux='tmux -2'
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim='nvim'
 alias v='nvim'
 alias ls='ls --color --group-directories-first'
@@ -44,5 +43,12 @@ source <(fzf --zsh)
 # Git autocomplete
 autoload -Uz compinit && compinit
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+bindkey -e
+
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
 
 source $HOME/.profile

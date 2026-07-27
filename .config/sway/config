@@ -60,6 +60,9 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+bindsym Print exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+s exec grim -g "$(slurp)" - | wl-copy
+
 # bindsym $mod+b splith
 # bindsym $mod+v splitv
 # bindsym $mod+s layout stacking
@@ -88,7 +91,6 @@ bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ 
 bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-bindsym Print exec grim -g "$(slurp)" - | wl-copy
 
 bar {
     swaybar_command waybar
